@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        body{
+            background-color: lavender;
+        }
+        .container{
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .container-name{
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            margin-top: 50px;
+            background-color: aliceblue;
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .container-name:hover{
+            box-shadow: 0px 5px 9px 0px rgba(0,0,0, 0.2);
+        }
+        .title-form{
+            font-size: 20px;
+        }
+        .from-control{
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .from-box{
+            display: flex;
+            flex-direction: column;
+            font-weight: bolder;
+        }
+        label{
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        input,
+        select,
+        textarea{
+            padding: 6px 10px;
+            border: 1px solid black;
+            font-size: 15px;
+            border-radius: 4px;
+        }
+        input:focus{
+            outline-color: rgb(223, 44, 243);
+        }
+        select:focus{
+            outline-color: rgb(223, 44, 243);
+        }
+        textarea:focus{
+            outline-color: rgb(223, 44, 243);
+        }
+        .button-container{
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        button{
+            border: none;
+            background-color: blue;
+            color: white;
+            font-size: 17px;
+            padding: 5px 5px;
+            transition: all 0.3s ease-in;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button:hover{
+            border: 1px solid black;
+            background-color: rgba(139, 136, 136, 0.2);
+            border-radius: 10px;
+            color: #000000;
+            transition: all 0.3s ease-in;
+        }
+        button a{
+            text-decoration: none;
+            color: white;
+        }
+        button a:hover{
+            color: #000000;
+            transition: all 0.3s ease-in;
+        }
+        
+        .textarea_container{
+            grid-column: 1 / span 2;
+            font-weight: bolder;
+        }
+        .textarea_container textarea{
+            width: 100%;
+        }
+        @media screen and(max-width:400px) {
+            .textarea_container{
+                grid-column: 1 / span 1;
+            }
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-name">
+            <h1>
+                Job Application From
+                <span class="title-form">(web)</span>
+            </h1>
+            <from action="">
+                <div class="from-control">
+                    <div class="from-box">
+                        <label for="first_name">First Name</label>
+                        <input id="first_name" placeholder="Enter First name.." required>
+                    </div>
+                    <div class="from-box">
+                        <label for="last_name">Last Name</label>
+                        <input id="last_name" placeholder="Enter Last name.." required>
+                    </div>
+                    <div class="from-box">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter Email.." required>
+                    </div>
+                    <div class="from-box">
+                        <label for="job_role">Job Role</label>
+                        <select id="job_role" name="jobrole" required>
+                            <option value="">Select Job Role</option>
+                            <option value="react">React</option>
+                            <option value="node">Node.Js</option>
+                            <option value="full_stack">Full Stack Developer</option>
+                            <option value="frontend">Frontend Developer</option>
+                        </select>
+                    </div>
+                    <div class="textarea_container">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" row="4" cols="50" placeholder="Enter Address..." required>
+
+                        </textarea>
+                    </div>
+                    <div class="from-box">
+                        <label for="city">City</label>
+                        <input  id="city" placeholder="Enter City Name.." required>
+                    </div>
+                    <div class="from-box">
+                        <label for="pincode">Pincode</label>
+                        <input type="number" id="pincode" placeholder="Enter Pincode here.." required>
+                    </div>
+                    <div class="from-box">
+                        <label for="date">D.O.B</label>
+                        <input value="1999-05-24" type="date" id="date" placeholder="Enter Date of Birth.." required>
+                    </div>
+                    <div class="from-box">
+                        <label for="uploadfile">Upload Your File</label>
+                        <input type="file" id="upload" placeholder="Enter Upload your File.." required>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit"><a href="index.html">Apply Now</a></button>
+
+                </div>
+            </from>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JOB PORTAL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  .navbar {
+    height: 70px;
+  }
+
+  .nav-link {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-box-reflect: below -30px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+    position: relative;
+    animation: move 2s infinite;
+    animation-delay: calc(.1s * var(--i));
+  }
+
+  @keyframes move {
+
+    10%,
+    40%,
+    100% {
+      transform: translateY(0);
+    }
+
+    20% {
+      transform: translateY(20px);
+    }
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+    color: rgb(236, 89, 118);
+  }
+
+  form {
+    margin-right: 30%;
+  }
+
+  img {
+    height: 600px;
+  }
+
+  .search-wrapper {
+    width: 60%;
+    margin: auto;
+    min-width: 300px;
+    height: 3.5rem;
+    position: relative;
+  }
+
+  .search-box {
+    width: 100%;
+    position: absolute;
+    /* background-color: gray; */
+    box-shadow: rgba(2, 11, 20, 0.2) 0px 5px 15px;
+    top: -45%;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .search-card {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0.5rem;
+  }
+
+  .search-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border: 1px solid red;
+    padding: 0.5rem;
+  }
+
+  .search-button {
+    width: 200px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .search-button:hover {
+    transform: translateX(10px);
+    background-color: rgb(83, 83, 240);
+  }
+
+  .filter-box {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    width: 60%;
+    min-width: 300px;
+    margin: auto;
+  }
+
+  .filter-dropdown {
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  .filter-select {
+    border: none;
+    padding: 0.2rem;
+    font-size: 18px;
+  }
+
+  .filter-select:hover {
+    background-color: rgb(176, 174, 181);
+  }
+
+  .filter-chosen {
+    width: 100%;
+    padding: 0.3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .chosen-card {
+    background-color: green;
+    font-size: 15px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  i {
+    margin: 5px;
+    font-size: 20px;
+  }
+
+  /* .job-list {
+    margin: 5%;
+    padding: 1rem;
+    background-color: lavender;
+  } */
+
+  /* #job-card{
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: 1rem;
+      margin: 1rem;
+      min-height: 100px;
+      align-items: center;
+      box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+      cursor: pointer;
+    } */
+  /* .job-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    min-height: 100px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+  } */
+
+  /* .job-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transform: scale(1.1);
+  } */
+
+  /* #job-card:hover{
+      box-shadow: rgba(0,0,0, 0.1) 0px 4px 12px;
+      transform: scale(1.1);
+    } */
+  /* .job-name {
+    display: flex;
+  }
+
+  .job-profile {
+    width: 60px;
+    height: 60px;
+    margin: 0.5rem;
+  }
+
+  .job-detail {
+    padding: 0 10px;
+  }
+
+  .job-detail>h4 {
+    color: white;
+    font-size: 0.9rem;
+
+  } */
+
+  /* .job-detail>p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .job-label {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .job-label>a {
+    padding: 0 1rem;
+    margin: 0.2rem;
+    text-decoration: none;
+    border-radius: 20px;
+    color: #000000;
+    font-size: 1rem;
+  }
+
+  .label-a {
+    background-color: yellow;
+  }
+
+  .label-b {
+    background-color: blue;
+  }
+
+  .label-c {
+    background-color: rgb(255, 7, 7);
+  }
+
+  .job-posted {
+    font-size: 1rem;
+  } */
+
+  .job-more {
+    display: block;
+    padding: 0.3rem 2rem;
+    margin: 20px auto;
+    width: 250px;
+    background-color: transparent;
+    color: blue;
+    border: 1px solid blue;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .job-more:hover {
+    background-color: blue;
+    color: white;
+  }
+
+  .join {
+    width: 100%;
+    height: 350px;
+    /* background-image: url(jobweb.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #023047;
+    color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    align-items: center;
+    position: relative;
+  }
+
+  /* .join::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 85, 177, 0.6) 0%, rgba(0, 122, 255, 0.5) 100%),
+    linear-gradient(180deg, rgba(0, 122, 255, 0.65) 0%, transparent, 100%);
+    z-index: 1;
+
+  } */
+
+  .join_detail {
+    min-width: 280px;
+    width: 50%;
+    z-index: 2;
+    margin-top: 1rem;
+
+  }
+
+  .join_detail>h1 {
+    font-size: 36px;
+    letter-spacing: 2;
+  }
+
+  .content-now{
+    border: transparent;
+    background-color: yellow;
+    border-radius: 20px;
+    font-weight: 600;
+    color: black;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  button:focus{
+    outline-color: #ea5bb3;
+  }
+  .content-now a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+
+  .content-now:hover {
+    transform: translateX(10px);
+    /* background-color: rgb(241, 97, 167); */
+  }
+
+  .featured {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: lavender;
+  }
+
+  .featured-image {
+    height: 30px;
+    margin-bottom: 0.2rem;
+  }
+
+  .section-title {
+    margin-bottom: 0.5rem;
+    letter-spacing: 1.5;
+    font-size: 36px;
+  }
+
+  .featured-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    padding: 2% 10%;
+  }
+
+  .featured-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .featured-card:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .featured-button {
+    border: 1px solid blue;
+    background-color: transparent;
+    margin-top: 0.5rem;
+    padding: 3px 10px;
+    cursor: pointer;
+    color: blue;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+
+  }
+
+  .featured-button:hover {
+    background-color: blue;
+    color: white;
+    transform: translateX(10px);
+  }
+  .boxx{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 100px;
+    padding: 2rem 5rem;
+  }
+  .boxx:hover{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  .card-content{
+    width: 325px;
+    height: 400px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card-content img{
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    /* position: relative;
+    animation: slide 20s infinite; */
+  }
+  .card-content img:hover{
+    transform: translateX(10px);
+  }
+  .name{
+    color: #000000;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 40%;
+  }
+  .wiproo{
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .readmore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border: none;
+    color: black;
+    background-color: lavender;
+    border-radius: 5px;
+    width: 30%;
+    padding: 0.5rem 1rem;
+    margin-left: 35%;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .readmore:hover{
+    background-color: rgb(239, 72, 166);
+    transform: translateY(-5px);
+  }
+  .header{
+    margin-left: 35%;
+    letter-spacing: 2;
+    font-weight: 500;
+  }
+  .wipro{
+    margin-left: 33%;
+    font-size:16px;
+    font-weight: 400;
+  }
+  .server{
+    display: flex;
+    padding: 30px 0px 40px 0px;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    height: 50%;
+    border: 1px solid black;
+    background-color: lavender;
+  }
+  .footer{
+    flex-direction: column;
+    display: flex;
+  }
+  .footer a{
+    text-decoration: none;
+    color: #000000;
+    font-size:17px ;
+    font-weight: 600;
+  }
+  .hhhh{
+    display: flex;
+    align-items: center;
+    background-color: #f0a0a0;
+    height: 5rem;
+    padding: 1rem 5rem;
+  }
+  .fa-brands{
+    position: relative;
+    animation: animate 2s infinite;
+    transition: all 0.2s ease-in-out;
+  }
+  @keyframes animate{
+    0%{
+      transform: rotate(0deg);
+      transform: scale(0);
+    }
+    100%{
+      transform: rotate(360deg);
+      transform: scale(1.1);
+    }
+  }
+  /*    */
+  .jobs-list-container {
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  .jobs-list-container h2 {
+    font-size: 30px;
+    border-left: 4px solid #023047;
+    padding-left: 20px;
+  }
+  
+  .jobs-list-container .jobs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+  
+  .jobs-list-container .jobs img {
+    width: 60px;
+  }
+  
+  .jobs-list-container .job {
+    box-shadow: 0 4px 24px -8px rgba(2, 48, 71, 0.2);
+    height: 300px;
+    padding: 24px;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 400ms ease;
+  }
+  
+  .jobs-list-container .job:hover {
+    transform: scale(1.03);
+  }
+  
+  .jobs-list-container .open-positions {
+    position: absolute;
+    top: 40px;
+    right: 24px;
+    color: #e63946;
+  }
+  
+  .jobs-list-container .job-title {
+    font-size: 20px;
+    padding: 10px 0;
+    margin: 0;
+    color: #023047;
+  }
+  
+  .jobs-list-container .details {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8;
+    flex: 1;
+  }
+  
+  .jobs-list-container .details-btn {
+    text-decoration: none;
+    border: 1px solid #023047;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 400ms ease;
+  }
+  
+  .jobs-list-container .details-btn:hover {
+    background: #ea5bb3;
+    color: #fff;
+  }
+  
+  .jobs-list-container .job-search {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-family: "Rubik", sans-serif;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 940px) {
+    .jobs-list-container .jobs {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .jobs-list-container .jobs {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="findjob.avif" class="imagee" style="height: 45px; border-radius: 50%;"></a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#" style="--i:1">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#jobs" style="--i:2">jobs</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#join" style="--i:3">join now</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#companies" style="--i:4">companies</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#testimonial" style="--i:4">testimonial</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#contact" style="--i:5">contact us</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+          <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
+        </ul>
+        <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-danger" type="submit">Search</button>
+            </form> -->
+      </div>
+    </div>
+  </nav>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="jobweb.avif" class="d-block w-100" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="jobweb2.avif" class="d-block w-100" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="jobweb3.jpg" class="d-block w-100" alt="">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="search-wrapper">
+    <div class="search-box">
+      <div class="search-card">
+        <!-- <input class="search-input" type="text" placeholder="Job Search here">
+        <button class="search-button bg-success">Search</button> -->
+      </div>
+    </div>
+  </div>
+  <div class="filter-box">
+    <div class="filter-dropdown">
+      <select class="filter-select" id="job-lavel" name="job-lavel">
+        <option>Job Lavel</option>
+        <option>Entry</option>
+        <option>Mid-Senior</option>
+        <option>Director</option>
+      </select>
+      <select class="filter-select" id="job-function" name="job-function">
+        <option>Job Function</option>
+        <option>It</option>
+        <option>Management</option>
+        <option>Education</option>
+      </select>
+      <select class="filter-select" id="employement" name="employement">
+        <option>Employement tyoe</option>
+        <option>Internship</option>
+        <option>Part time</option>
+        <option>Full time</option>
+      </select>
+      <select class="filter-select" id="location" name="location">
+        <option>Location</option>
+        <option>Remote</option>
+        <option>US</option>
+        <option>UK</option>
+      </select>
+      <select class="filter-select" id="education" name="education">
+        <option>Education</option>
+        <option>High School</option>
+        <option>Bachelor's Degree</option>
+        <option>Master's Degree</option>
+      </select>
+    </div>
+    <div class="filter-chosen">
+      <div class="chosen-card">
+        Remote<i class="fas fa-times-circle"></i>
+      </div>
+      <div class="chosen-card">
+        Full time<i class="fas fa-times-circle"></i>
+      </div>
+      <div class="chosen-card">
+        Financial Tech<i class="fas fa-times-circle"></i>
+      </div>
+      <div class="chosen-card">
+        Entry Lavel<i class="fas fa-times-circle"></i>
+      </div>
+    </div>
+  </div>
+  <section class="" id="jobs">
+    <div class="jobs-list-container">
+      <h2>5 Jobs</h2>
+
+      <input class="job-search" type="text" placeholder="Search here..." />
+
+      <div class="jobs"></div>
+    </div>
+    <!-- <div class="job-card">
+      <div class="job-name">
+        <img src="Tesla.png" class="job-profile">
+        <div class="job-detail">
+          <h4>Tesla</h4>
+          <h3>Mecanical Engineer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">javascript</a>
+
+      </div>
+      <div class="job-posted">
+        posted 2 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="wipro.jpg" class="job-profile">
+        <div class="job-detail">
+          <h4>Wipro</h4>
+          <h3>Web Designer/Developer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT & PHP</a>
+        <a class="label-c" href="#">UI & UX</a>
+      </div>
+      <div class="job-posted">
+        posted 3 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="Infosys.webp" class="job-profile">
+        <div class="job-detail">
+          <h4>Infosys</h4>
+          <h3>Web & Mobile UI / UX designer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+        <a class="label-c" href="#">UI & UX</a>
+      </div>
+      <div class="job-posted">
+        posted 5 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="hlc technology.png" class="job-profile">
+        <div class="job-detail">
+          <h4>HLC Technology</h4>
+          <h3>Software Developer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+        <a class="label-c" href="#">Database</a>
+        <a class="label-c" href="#">Python</a>
+      </div>
+      <div class="job-posted">
+        posted 1 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="tech mahindra.svg" class="job-profile">
+        <div class="job-detail">
+          <h4>Tech Mahindra</h4>
+          <h3>Electrical Engineer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+      </div>
+      <div class="job-posted">
+        posted 6 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="sonata software.png" class="job-profile">
+        <div class="job-detail">
+          <h4>Sonata software</h4>
+          <h3>Software developer(interns)</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+      </div>
+      <div class="job-posted">
+        posted 4 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="mphasis.jpg" class="job-profile">
+        <div class="job-detail">
+          <h4>Ebay</h4>
+          <h3>Web desiner</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+      </div>
+      <div class="job-posted">
+        posted 8 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="amazon.png" class="job-profile">
+        <div class="job-detail">
+          <h4>amazone</h4>
+          <h3>Software Testing Trainer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+      </div>
+      <div class="job-posted">
+        posted 7 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="microsoft.jpeg" class="job-profile">
+        <div class="job-detail">
+          <h4>Microsoft</h4>
+          <h3>UI/UX Designer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+      </div>
+      <div class="job-posted">
+        posted 2 min ago
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-name">
+        <img src="google.png" class="job-profile">
+        <div class="job-detail">
+          <h4>Google</h4>
+          <h3>PHP Developer</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, laborum.</p>
+        </div>
+      </div>
+      <div class="job-label">
+        <a class="label-a" href="#">HTML</a>
+        <a class="label-b" href="#">CSS</a>
+        <a class="label-c" href="#">JAVA SCRIPT</a>
+      </div>
+      <div class="job-posted">
+        posted 1 min ago
+      </div>
+    </div>
+    <button class="job-more">MoreJob</button>
+  </section> -->
+  <section class="join" id="join">
+     <div class="join_detail">
+      <h1 class="section-title">LETS START YOUR NEW JOB<br> WITH US</h1>
+    <marquee loop="20"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+      eius culpa tenetur assumenda temporibus veritatis repellat laudantium quod fugit harum.</p></marquee>
+      <marquee><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis laboriosam deserunt consequatur unde, odit ullam?</p></marquee>
+     </div> 
+    <button class="content-now"><a href="login.html">JOIN NOW</a></button>
+  </section>
+  <section class="featured" id="companies">
+    <h1 class="section-title">Featured Companies</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ipsum est hic labore? Cum, quas!</p>
+    <div class="featured-wrapper">
+      <div class="featured-card">
+        <img class="featured-image" src="ebay.png">
+        <p>Ebay</p>
+        <button class="featured-button">View 2 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="sonata software.png">
+        <p>Sonata software</p>
+        <button class="featured-button">View 1 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="mphasis.jpg">
+        <p>Mpasis</p>
+        <button class="featured-button">View 3 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="Tesla.png">
+        <p>Tesla</p>
+        <button class="featured-button">View 4 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="google.png">
+        <p>Google</p>
+        <button class="featured-button">View 3 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="apple.jpg">
+        <p>Apple</p>
+        <button class="featured-button">View 5 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="amazon.png">
+        <p>amazone</p>
+        <button class="featured-button">View 8 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="microsoft.jpeg">
+        <p>Microsoft</p>
+        <button class="featured-button">View 6 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="tech mahindra.svg">
+        <p>Tech Mahindra</p>
+        <button class="featured-button">View 4 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="wipro.jpg">
+        <p>Wipro</p>
+        <button class="featured-button">View 1 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="hlc technology.png">
+        <p>HCL Technology</p>
+        <button class="featured-button">View 9 Jobs</button>
+      </div>
+      <div class="featured-card">
+        <img class="featured-image" src="Infosys.webp">
+        <p>Infosys</p>
+        <button class="featured-button">View 5 Jobs</button>
+      </div>
+    </div>
+  </section>
+  <section class="testimonial" id="testimonial">
+    <h1 class="header">Feature Of Testimonial</h1>
+    <p class="wipro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nisi.</p>
+    <div class="boxx">
+      <div class="card-content">
+        <img src="man 2.jpg">
+        <div class="content-x">
+          <h3 class="name">Satya</h3>
+          <p class="wiproo" style="margin-left: 30%;">Lorem, ipsum dolor.</p>
+          <i class="fa-brands fa-facebook" style="margin-left: 36%;"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="#" class="readmore">ReadMore</a>
+        </div>
+      </div>
+      <div class="card-content">
+        <img src="man 3.webp">
+        <div class="content-x">
+          <h3 class="name">Kanha</h3>
+          <p class="wiproo" style="margin-left: 30%;">Lorem, ipsum dolor.</p>
+          <i class="fa-brands fa-facebook" style="margin-left: 36%;"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="#" class="readmore">ReadMore</a>
+        </div>
+      </div>
+      <div class="card-content">
+        <img src="man4.jpg">
+        <div class="content-x">
+          <h3 class="name">Sibun</h3>
+          <p class="wiproo" style="margin-left: 30%;">Lorem, ipsum dolor.</p>
+          <i class="fa-brands fa-facebook" style="margin-left: 36%;"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="#" class="readmore">ReadMore</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <div class="server">
+      <div class="footer">
+        <h5><u>BOLD</u></h5>
+        <a href="">home</a>
+        <a href="">home</a>
+        <a href="">about</a>
+        <a href="">home</a>
+      </div>
+      <div class="footer">
+        <h5><u>BOLD</u></h5>
+        <a href="">home</a>
+        <a href="">service</a>
+        <a href="">contact</a>
+        <a href="">about</a>
+      </div>
+      <div class="footer">
+        <h5><u>BOLD</u></h5>
+        <a href="">home</a>
+        <a href="">home</a>
+        <a href="">vn</a>
+        <a href="">vdnnnnnv</a>
+      </div>
+      <div class="footer">
+        <h5><u>BOLD</u></h5>
+        <a href="">home</a>
+        <a href="">about</a>
+        <a href="">home</a>
+        <a href="">homer</a>
+      </div>
+    </div>
+    <div class="hhhh">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-twitter"></i>
+    </div>
+  </section>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
